@@ -1,0 +1,83 @@
+:root{
+  --bg:#0f1221;
+  --fg:#e8eaf6;
+  --card:#171a30;
+  --accent:#7c9cff;
+  --muted:#9aa4c2;
+  --border:#2a2f4b;
+  --shadow:0 10px 30px rgba(0,0,0,.25);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,sans-serif;
+  background:radial-gradient(1200px 800px at 20% -10%, #263063 0, transparent 60%),
+             radial-gradient(1200px 800px at 120% 110%, #2b3a7a 0, transparent 50%),
+             var(--bg);
+  color:var(--fg);
+}
+
+.site-header{padding:28px 20px 8px;text-align:center}
+.site-header h1{margin:0;font-size:clamp(1.6rem,3vw,2.4rem)}
+.subtitle{margin:.25rem 0 0;color:var(--muted)}
+
+.grid{
+  display:grid;
+  gap:16px;
+  grid-template-columns:repeat(12,1fr);
+  padding:16px;
+  max-width:1200px;
+  margin:0 auto;
+}
+
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:16px;
+  box-shadow:var(--shadow);
+}
+
+.card h2{margin:.2rem 0 1rem;font-size:1.1rem;color:var(--accent)}
+
+.controls{display:grid;gap:.6rem}
+button,select,input[type="range"]{
+  width:100%;
+  padding:.6rem .8rem;
+  border-radius:12px;
+  border:1px solid var(--border);
+  background:#0f1330;
+  color:var(--fg);
+  outline:none;
+}
+button{
+  background:linear-gradient(180deg,#2a3a9a,#19256a);
+  border:1px solid #1b2a7a;
+  cursor:pointer;
+  font-weight:600;
+}
+button:hover{filter:brightness(1.07)}
+.row{display:grid;grid-template-columns:120px 1fr;align-items:center;gap:.6rem}
+.hint{color:var(--muted);font-size:.9rem}
+
+.stage{
+  width:100%;
+  aspect-ratio:16/10;
+  border:1px dashed var(--border);
+  border-radius:12px;
+  overflow:hidden;
+  background:#0b0f26;
+}
+
+.site-footer{padding:16px;text-align:center;color:var(--muted)}
+
+@media (min-width:900px){
+  .card:nth-of-type(1){grid-column:span 4}
+  .card:nth-of-type(2){grid-column:span 4}
+  .card:nth-of-type(3){grid-column:span 4}
+}
+@media (max-width:899px){
+  .card{grid-column:span 12}
+}

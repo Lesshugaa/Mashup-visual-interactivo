@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mashup Interactivo — p5.js + Processing.js</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Librerías -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.2/p5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.6.6/processing.min.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1>🎨 Mashup Visual Interactivo</h1>
+    <p class="subtitle">p5.js + Processing.js · PWD 7° 2° B</p>
+  </header>
+
+  <main class="grid">
+    <!-- Panel de controles -->
+    <section class="card">
+      <h2>Controles</h2>
+      <div class="controls">
+        <button id="btn-toggle">▶ Iniciar animación</button>
+        <button id="btn-clear">🧽 Limpiar lienzo</button>
+        <label class="row">
+          <span>Diámetro</span>
+          <input id="size" type="range" min="10" max="120" value="48" />
+        </label>
+        <label class="row">
+          <span>Velocidad</span>
+          <input id="speed" type="range" min="1" max="12" value="4" />
+        </label>
+        <label class="row">
+          <span>Paleta</span>
+          <select id="palette">
+            <option value="pastel" selected>Pastel</option>
+            <option value="neon">Neón</option>
+            <option value="mono">Monocromática</option>
+          </select>
+        </label>
+        <p class="hint">
+          Consejo: hacé clic o mové el mouse sobre el lienzo p5 para dibujar; en Processing el cuadrado rebota y gira.
+        </p>
+      </div>
+    </section>
+
+    <!-- Lienzo p5.js -->
+    <section class="card">
+      <h2>p5.js</h2>
+      <div id="p5-container" class="stage" aria-label="Lienzo p5.js"></div>
+    </section>
+
+    <!-- Lienzo Processing.js -->
+    <section class="card">
+      <h2>Processing.js</h2>
+      <canvas id="processing-canvas" class="stage" aria-label="Lienzo Processing.js"></canvas>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>💡 Actividad 12 — Mashup visual con p5.js y Processing.js. Hecho para prácticas educativas.</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
